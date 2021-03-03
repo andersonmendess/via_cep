@@ -14,7 +14,15 @@ class via_cep {
   String _sensitive;
 
   // variables return
-  String _return01, _return02, _return03, _return04, _return05, _return06, _return07, _return08, _return09;
+  String _return01,
+      _return02,
+      _return03,
+      _return04,
+      _return05,
+      _return06,
+      _return07,
+      _return08,
+      _return09;
 
   via_cep() {
     clear();
@@ -45,9 +53,9 @@ class via_cep {
 
     _sensitive = sensitive.toString().toLowerCase().trim();
 
-    String _URLAccess = _URLBase+CEP+'/'+output;
+    String _URLAccess = _URLBase + CEP + '/' + output;
 
-    var response = await http.get(_URLAccess);
+    var response = await http.get(Uri(path: _URLAccess));
 
     _Response = response.statusCode;
     _Body = response.body;
@@ -67,7 +75,6 @@ class via_cep {
         _return07 = CEPdata['unidade'];
         _return08 = CEPdata['ibge'];
         _return09 = CEPdata['gia'];
-
       } else if (output == 'xml') {
         xml.Xml2Json myTransformer = xml.Xml2Json();
 
@@ -88,7 +95,6 @@ class via_cep {
         _return07 = CEPdata['unidade'];
         _return08 = CEPdata['ibge'];
         _return09 = CEPdata['gia'];
-
       } else if (output == 'piped') {
         var text = _Body.split('|');
 
@@ -114,9 +120,7 @@ class via_cep {
         _return08 = text[7].split('=')[1];
         _return09 = text[8].split('=')[1];
       }
-
     }
-
   }
 
   String getBody() {
@@ -246,5 +250,4 @@ class via_cep {
       return _return09;
     }
   }
-
 }
