@@ -1,6 +1,6 @@
 name: via_cep
 description: Uma biblioteca para consulta de CEP para desenvolvedores Dart (Console, Web e Flutter).
-version: 1.0.8
+version: 1.0.9
 homepage: https://viacep.com.br/
 repository: https://github.com/mateuspenha/via_cep
 issue_tracker: https://github.com/mateuspenha/via_cep/issues
@@ -11,7 +11,7 @@ environment:
 
 dependencies:
   http: ^0.13.0
-  xml2json: ^4.4.0
+  xml2json: ^5.0.0
 
 dev_dependencies:
   pedantic: ^1.0.0
