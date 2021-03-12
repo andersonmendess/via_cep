@@ -55,7 +55,7 @@ class via_cep {
 
     String _URLAccess = _URLBase + CEP + '/' + output;
 
-    var response = await http.get(Uri(host: _URLAccess));
+    var response = await http.get(Uri.parse(_URLAccess));
 
     _Response = response.statusCode;
     _Body = response.body;
